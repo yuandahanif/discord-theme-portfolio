@@ -4,7 +4,8 @@
 
 @layer components {
   .scroll-thin::-webkit-scrollbar {
-    width: 0.3em;
+    width: 0.2em;
+    border-radius: 5px;
   }
 
   .scroll-thin::-webkit-scrollbar-track {

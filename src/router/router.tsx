@@ -1,3 +1,4 @@
+import DmLayout from "layouts/dmLayout";
 import Layout from "layouts/layout";
 import Server from "layouts/serverLayout";
 import { Route, Routes } from "react-router-dom";
@@ -8,6 +9,8 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Server />} />
+          <Route path="/dm" element={<DmLayout />} />
+          <Route path="/server" element={<Server />} />
           <Route path="/server/:id" element={<Server />} />
           <Route
             path="*"
