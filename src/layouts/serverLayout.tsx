@@ -1,3 +1,4 @@
+import ChannelGroup from "components/channel/channelGroup";
 import MessageInput from "components/message/messageInput";
 import ProfileBar from "components/profile/profileBar";
 import { Link } from "react-router-dom";
@@ -28,18 +29,15 @@ const ServerLayout = () => {
         <div className="px-1 pt-3 text-dc-text-base">
           <ul>
             <li>
-              <div className="text-sm">
-                <button>TEXT CHANNELS</button>
-                <div className="ml-4">
-                  <ul>
-                    <li>
-                      <Link to="/">general</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <ChannelGroup
+                name="TEXT CHANNELS"
+                channels={[
+                  { name: "general", to: "/server/portofolio" },
+                  { name: "empty", to: "/server/empty" },
+                  { name: "404", to: "/server/404" },
+                ]}
+              />
             </li>
-            <li>bbb</li>
           </ul>
         </div>
 

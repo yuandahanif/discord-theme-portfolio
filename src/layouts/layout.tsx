@@ -20,9 +20,6 @@ const Layout = () => {
                 <li>
                   <ServerAvatar name="404" to="/404" />
                 </li>
-                <li>
-                  <Link to="/nothing-here">404</Link>
-                </li>
               </ul>
             </nav>
           </aside>

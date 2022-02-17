@@ -15,7 +15,7 @@ const Router = () => {
           <Route
             path="*"
             element={
-              <main style={{ padding: "1rem" }}>
+              <main className="flex justify-center items-center bg-dc-black-500 h-full text-white">
                 <p>Oops! There's nothing here!</p>
               </main>
             }
