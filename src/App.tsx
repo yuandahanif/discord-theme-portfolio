@@ -1,8 +1,12 @@
-import React from "react";
+import Router from "router/router";
 import "./styles/App.css";
 
 function App() {
-  return <div className="App">halo</div>;
+  return (
+    <>
+      <Router />
+    </>
+  );
 }
 
 export default App;
