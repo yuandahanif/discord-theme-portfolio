@@ -1,3 +1,4 @@
+import MessageInput from "components/message/messageInput";
 import ProfileBar from "components/profile/profileBar";
 import { Link } from "react-router-dom";
 import avatar from "../assets/images/taco.png";
@@ -6,8 +7,22 @@ const ServerLayout = () => {
   return (
     <div className="flex h-screen">
       <aside className="w-96 bg-dc-black-600 h-full text-white flex flex-col">
-        <header className="px-4 py-2 text-lg border-b border-dc-black-700">
-          server name
+        <header className="flex justify-between items-center px-4 py-2 text-lg border-b border-dc-black-700">
+          <span>server name</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
         </header>
 
         <div className="px-1 pt-3 text-dc-text-base">
@@ -32,8 +47,28 @@ const ServerLayout = () => {
       </aside>
 
       <div className="grow h-full bg-dc-black-100 overflow-y-hidden">
-        <header className="px-4 py-2 text-lg border-b border-dc-black-700 text-white">
-          channel name
+        <header className="flex gap-x-1 items-center px-4 py-2 text-lg border-b border-dc-black-700 text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-7 w-7 text-dc-text-base"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+            />
+          </svg>
+          <span className="text-white text-base">channel-name</span>
+
+          <div className="ml-auto flex items-center">
+            <span className="text-xs hover:text-gray-400 cursor-default duration-300">
+              channel setting
+            </span>
+          </div>
         </header>
 
         <div className="flex flex-col h-[87%] mx-4 my-1 text-white overflow-y-auto scroll-thin">
@@ -74,11 +109,7 @@ const ServerLayout = () => {
           })}
         </div>
 
-        <div className="">
-          <div className="bg-[#40444B] p-2 rounded-md mx-4 text-dc-text-light">
-            aa
-          </div>
-        </div>
+        <MessageInput />
       </div>
 
       <div className="w-80 bg-dc-black-600">
