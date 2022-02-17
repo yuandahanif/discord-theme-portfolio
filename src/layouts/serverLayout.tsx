@@ -1,3 +1,4 @@
+import ProfileBar from "components/profile/profileBar";
 import { Link } from "react-router-dom";
 import avatar from "../assets/images/taco.png";
 
@@ -27,26 +28,7 @@ const ServerLayout = () => {
           </ul>
         </div>
 
-        <div className="mt-auto flex p-2 border-t border-gray-700">
-          <div className="mr-4">
-            <div className="w-10 h-10 bg-white rounded-full overflow-hidden">
-              <img
-                src={avatar}
-                alt="profile"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="flex w-full">
-            <div className="flex flex-col">
-              <span className="mr-2">yuan</span>
-              <span className="text-xs">#1270</span>
-            </div>
-
-            <div className="ml-auto">icon</div>
-          </div>
-        </div>
+        <ProfileBar id={1270} name="yuan" />
       </aside>
 
       <div className="grow h-full bg-dc-black-100 overflow-y-hidden">
