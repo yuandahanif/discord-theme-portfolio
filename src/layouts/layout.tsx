@@ -1,6 +1,5 @@
 import ServerAvatar from "components/server/serverAvatar";
-import { Link, Outlet } from "react-router-dom";
-import avatar from "../assets/images/taco.png";
+import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (

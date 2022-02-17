@@ -1,7 +1,7 @@
 import ChannelGroup from "components/channel/channelGroup";
 import MessageInput from "components/message/messageInput";
 import ProfileBar from "components/profile/profileBar";
-import { Link } from "react-router-dom";
+import ProfileSimple from "components/profile/profileSimple";
 import avatar from "../assets/images/taco.png";
 
 const ServerLayout = () => {
@@ -112,10 +112,25 @@ const ServerLayout = () => {
 
       <div className="w-80 bg-dc-black-600">
         <header className="px-4 py-2 text-lg border-b border-dc-black-700">
-          Member
+          <span className="text-white text-base">Member</span>
         </header>
 
-        <div>member</div>
+        <div className="text-dc-text-light text-base">
+          <div className="px-3 py-4">
+            <span className="text-xs">ONLINE — 2</span>
+
+            <div>
+              <ul>
+                <li>
+                  <ProfileSimple name={"HRD"} id={1270} />
+                </li>
+                <li>
+                  <ProfileSimple name={"Admin"} id={1270} status="red" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
