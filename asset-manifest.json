@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/discord-theme-portfolio/static/css/main.6f5bf6d1.css",
-    "main.js": "/discord-theme-portfolio/static/js/main.2184e6ac.js",
+    "main.js": "/discord-theme-portfolio/static/js/main.65e3158e.js",
     "static/js/787.f0366125.chunk.js": "/discord-theme-portfolio/static/js/787.f0366125.chunk.js",
     "static/media/taco.png": "/discord-theme-portfolio/static/media/taco.83ea592a7d7c948b7716.png",
     "index.html": "/discord-theme-portfolio/index.html",
     "main.6f5bf6d1.css.map": "/discord-theme-portfolio/static/css/main.6f5bf6d1.css.map",
-    "main.2184e6ac.js.map": "/discord-theme-portfolio/static/js/main.2184e6ac.js.map",
+    "main.65e3158e.js.map": "/discord-theme-portfolio/static/js/main.65e3158e.js.map",
     "787.f0366125.chunk.js.map": "/discord-theme-portfolio/static/js/787.f0366125.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6f5bf6d1.css",
-    "static/js/main.2184e6ac.js"
+    "static/js/main.65e3158e.js"
   ]
 }
