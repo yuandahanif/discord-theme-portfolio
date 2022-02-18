@@ -1,0 +1,68 @@
+{
+  "id": "portfolio",
+  "name": "portfolio",
+  "channel": [
+    {
+      "id": "portfolio-1",
+      "name": "portfolio",
+      "messages": [
+        {
+          "name": "Res.to",
+          "image_url": "https://yuandahanif.github.io/portfolio/static/media/project-1.1a7023d3.png",
+          "description": "Res.to adalah Mobile Progresive Web App yang berisi ratusan daftar restoran untuk memenuhi petualangan makanmu setiap hari.    ",
+          "story": "Res.to ini dibuat untuk memenuhi persyaratan <a class=\"underline\" target=\"_blank\" rel=\"noreferrer\" href=\"https://www.dicoding.com/academies/219\">Kelas Menjadi Front-End Web Developer Expert</a>. Dalam Project ini saya belajar banyak hal dari Web Accessibility, Clean Code, Testing, hingga Web Performance.",
+          "technology": ["HTML", "CSS", "JS", "Firebase"],
+          "repository_url": "https://github.com/yuandahanif/Res.to",
+          "demo_url": "https://res-to.web.app/"
+        },
+        {
+          "name": "web informasi COVID-19",
+          "image_url": "https://yuandahanif.github.io/portfolio/static/media/project-4.2ca7ae0f.png",
+          "description": "Web Sederhana yang berisi berbagai Informasi terkait data persebaran covid-19 dan berita kesehatan yang diambil dari berbagai sumber terpercaya.",
+          "story": "Web semi Full Stack yang dibuat untuk ikut dalam sebuah event, tapi sayang ketabrak deadline :D. Pernah menggunakan 2 backend dengan 2 framework berbeda (lumen dan express) tapi sayangnya tidak tercatat di commit git :(",
+          "technology": ["HTML", "CSS", "JS"],
+          "repository_url": "https://github.com/yuandahanif/web-sederhana-informasi-COVID19",
+          "demo_url": null
+        },
+        {
+          "name": "Huddle landing page",
+          "image_url": "https://yuandahanif.github.io/portfolio/static/media/project-3.2242875d.png",
+          "description": "<p>Project latihan dari <a class=\"underline\" target=\"_blank\" rel=\"noreferrer\" href=\"https://www.frontendmentor.io\">Frontend Mentor</a></p>",
+          "story": "Project iseng yang saya lakukan saat tidak ada kegiatan.",
+          "technology": ["HTML", "SASS", "JS"],
+          "repository_url": "https://github.com/yuandahanif/Huddle-landing-page-with-curved-sections",
+          "demo_url": "https://huddle-landing-page-with-curved-sections-seven.vercel.app/"
+        },
+        {
+          "name": "instagram clone",
+          "image_url": "https://yuandahanif.github.io/portfolio/static/media/project-6.dc22aefd.png",
+          "description": "<p>Project React Pertama, meniru tampilan Instagram.</p>",
+          "story": "Tiruan ini responsive untuk halaman mobile dan desktop.",
+          "technology": ["React", "SASS", "TS"],
+          "repository_url": "https://github.com/yuandahanif/instagram-clone-reactjs",
+          "demo_url": "https://yuandahanif.github.io/instagram-clone-reactjs/"
+        },
+        {
+          "name": "shoot and share",
+          "image_url": "https://yuandahanif.github.io/portfolio/static/media/project-7.e0037838.png",
+          "description": "<p>Hasil dari kelas React native di <a class=\"underline\" target=\"_blank\" rel=\"noreferrer\" href=\"https://sanbercode.com/\">SanberCode</a>, Aplikasi berbagi foto sederhana yang terinspirasi dari Instagram. Menggunakan Firebase sebagai Backend dengan beberapa fitur aplikasi diantaranya autentifikasi(menggunakan google dan manual), kamera, upload foto, dan chat.</p>",
+          "story": "Aplikasi mobile ke 2 yang saya kerjakan dari awal hingga akhir seorang diri.",
+          "technology": ["React native", "JS", "Firebase"],
+          "repository_url": "https://github.com/yuandahanif/instagram-clone-reactjs",
+          "demo_url": "https://yuandahanif.github.io/instagram-clone-reactjs/"
+        },
+        {
+          "name": "portfolio[old]",
+          "image_url": "https://yuandahanif.github.io/portfolio/static/media/project-10.a537ed27.png",
+          "description": "<p>Web untuk untuk showcase project yang pernah saya buat.</p>",
+          "story": "Dibuat dalam rangka mendaftar Student staff :D untuk menampilkan beberapa project yang pernah saya kerjakan.",
+          "technology": ["React", "TS", "SASS"],
+          "repository_url": "https://github.com/yuandahanif/portfolio",
+          "demo_url": "https://yuandahanif.github.io/portfolio/#/project"
+        }
+      ]
+    },
+    { "id": "empty-1", "name": "about", "messages": [] },
+    { "id": "404-1", "name": "404", "messages": [] }
+  ]
+}

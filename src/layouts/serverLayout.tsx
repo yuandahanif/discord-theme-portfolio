@@ -2,14 +2,18 @@ import ChannelGroup from "components/channel/channelGroup";
 import MessageInput from "components/message/messageInput";
 import ProfileBar from "components/profile/profileBar";
 import ProfileSimple from "components/profile/profileSimple";
+import { useParams } from "react-router-dom";
 import avatar from "../assets/images/taco.png";
+import articleJson from "../data/server/portofolio.json";
 
 const ServerLayout = () => {
+  let params = useParams();
+
   return (
-    <div className="flex h-screen">
-      <aside className="w-96 bg-dc-black-600 h-full text-white flex flex-col">
+    <div className="flex h-full">
+      <aside className="max-w-[270px] w-full bg-dc-black-600 h-full text-white flex flex-col">
         <header className="flex justify-between items-center px-4 py-2 text-lg border-b border-dc-black-700">
-          <span>server name</span>
+          <span>{articleJson.name}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4"
@@ -31,36 +35,42 @@ const ServerLayout = () => {
             <li>
               <ChannelGroup
                 name="TEXT CHANNELS"
-                channels={[
-                  { name: "general", to: "/server/portofolio" },
-                  { name: "empty", to: "/server/empty" },
-                  { name: "404", to: "/server/404" },
-                ]}
+                channels={articleJson.channel}
               />
             </li>
           </ul>
         </div>
 
-        <ProfileBar id={1270} name="yuan" />
+        <ProfileBar
+          profile="https://avatars.githubusercontent.com/u/34027873?v=4"
+          id={1270}
+          name="yuan"
+        />
       </aside>
 
       <div className="grow h-full bg-dc-black-100 overflow-y-hidden">
         <header className="flex gap-x-1 items-center px-4 py-2 text-lg border-b border-dc-black-700 text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-7 w-7 text-dc-text-base"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
-            />
-          </svg>
-          <span className="text-white text-base">channel-name</span>
+          {params.server && (
+            <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-7 text-dc-text-base"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+                />
+              </svg>
+              <span className="text-white text-base">
+                {articleJson.channel.find((c) => c.id === params.server)?.name}
+              </span>
+            </>
+          )}
 
           <div className="ml-auto flex items-center">
             <span className="text-xs hover:text-gray-400 cursor-default duration-300">
@@ -69,48 +79,108 @@ const ServerLayout = () => {
           </div>
         </header>
 
-        <div className="flex flex-col h-[87%] mx-4 my-1 text-white overflow-y-auto scroll-thin">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((_) => {
-            return (
-              <div key={_} className="flex p-2">
-                <div className="mr-4">
-                  <div className="w-10 h-10 bg-white rounded-full overflow-hidden">
-                    <img
-                      src={avatar}
-                      alt="profile"
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                </div>
+        <div className="flex flex-col h-[85%] pr-1 mr-1 gap-y-4 my-1 text-white overflow-y-auto scroll-thin">
+          {params.server &&
+            articleJson.channel
+              .find((c) => c.id === params.server)
+              ?.messages.map((_, i) => {
+                return (
+                  <div
+                    key={_.name}
+                    className="flex p-2 pl-5 hover:bg-dc-black-500 duration-100 rounded-sm text-dc-text-light"
+                  >
+                    <div className="mr-4">
+                      <div className="w-10 h-10 bg-white rounded-full overflow-hidden">
+                        <img
+                          src="https://avatars.githubusercontent.com/u/34027873?v=4"
+                          alt="profile"
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </div>
 
-                <div>
-                  <div>
-                    <span className="mr-2">name</span>
-                    <span className="text-xs">Yesterday at 1:41 PM</span>
-                  </div>
+                    <div>
+                      <div>
+                        <span className="mr-2 text-blue-400">
+                          Yuanda Hanif Hisyam
+                        </span>
+                        <span className="text-xs">
+                          Yesterday at 1:{10 + i} PM
+                        </span>
+                      </div>
 
-                  <div className="text-sm max-w-7xl">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Magni voluptas officiis atque sunt cumque molestiae illum
-                      ratione illo ipsum tenetur eum laboriosam ut in nihil, ea
-                      quibusdam. Voluptas, saepe tempora. Lorem ipsum dolor sit
-                      amet consectetur adipisicing elit. Corporis iure
-                      voluptatibus dolore eligendi a veniam enim soluta officia
-                      error non quasi reprehenderit deserunt laborum hic ut
-                      explicabo voluptate, ipsum provident?
-                    </p>
+                      <div className="text-sm max-w-7xl ">
+                        <div className="text-lg mb-1">
+                          <span>Nama project: </span>
+                          <span className="font-semibold">{_.name}</span>
+                        </div>
+
+                        <div className="max-w-full w-max mb-2 rounded-sm overflow-hidden">
+                          <img src={_.image_url} alt={_.name} />
+                        </div>
+
+                        <div className="mb-2">
+                          <span className="text-lg">Deskripsi</span>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: _.description,
+                            }}
+                          />
+                        </div>
+
+                        <div className="mb-2">
+                          <span className="text-lg">Cerita</span>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: _.story,
+                            }}
+                          />
+                        </div>
+
+                        <div className="mb-2">
+                          <span className="text-lg">Link</span>
+                          <div>
+                            <a
+                              href={_.repository_url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-blue-500 underline"
+                            >
+                              Repository
+                            </a>{" "}
+                            |{" "}
+                            {_.demo_url && (
+                              <a
+                                href={_.demo_url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-blue-500 underline"
+                              >
+                                Demo
+                              </a>
+                            )}
+                          </div>
+                        </div>
+
+                        {_.technology.length > 0 && (
+                          <div>
+                            <span className="text-lg">Teknologi</span>
+                            <p className="mb-2">
+                              {_.technology.map((tech) => `${tech}, `)}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
+                );
+              })}
         </div>
 
         <MessageInput />
       </div>
 
-      <div className="w-80 bg-dc-black-600">
+      <div className="hidden lg:block max-w-[225px] w-full bg-dc-black-600">
         <header className="px-4 py-2 text-lg border-b border-dc-black-700">
           <span className="text-white text-base">Member</span>
         </header>
@@ -122,10 +192,19 @@ const ServerLayout = () => {
             <div>
               <ul>
                 <li>
-                  <ProfileSimple name={"HRD"} id={1270} />
+                  <ProfileSimple
+                    profile="https://ui-avatars.com/api/?name=hrd"
+                    name={"HRD"}
+                    id={1270}
+                  />
                 </li>
                 <li>
-                  <ProfileSimple name={"Admin"} id={1270} status="red" />
+                  <ProfileSimple
+                    profile="https://ui-avatars.com/api/?name=admin"
+                    name={"Admin"}
+                    id={1270}
+                    status="ini admin"
+                  />
                 </li>
               </ul>
             </div>

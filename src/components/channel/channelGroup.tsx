@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
-interface ChannelList {
+interface Channel {
   name: string;
   id: string;
 }
 
 interface Props {
   name: string;
-  channels: ChannelList[];
+  channels: Channel[];
 }
 
 interface ChannelListProps {
   name: string;
   to: string;
-  onActive?: ({ name, id }: ChannelList) => void;
+  onActive?: ({ name, id }: Channel) => void;
 }
 
 const ChannelList = ({ name, to, onActive }: ChannelListProps) => {

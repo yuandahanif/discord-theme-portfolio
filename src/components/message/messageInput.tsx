@@ -1,6 +1,6 @@
 interface Props {}
 
-const MessageInput = ({}: Props) => {
+const MessageInput = () => {
   return (
     <>
       <div className="">

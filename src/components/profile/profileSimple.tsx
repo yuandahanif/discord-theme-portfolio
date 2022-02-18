@@ -25,7 +25,7 @@ const ProfileSimple = ({ name, id, profile, status }: Props) => {
         <div className="flex w-full">
           <div className="flex flex-col justify-center">
             <span className="leading-none text-sm">{name}</span>
-            {status && <span className="text-xs leading-none">{status}</span>}
+            {status && <span className="text-xs leading-tight">{status}</span>}
           </div>
         </div>
       </div>

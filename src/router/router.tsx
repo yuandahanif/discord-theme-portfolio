@@ -10,8 +10,9 @@ const Router = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Server />} />
           <Route path="/dm" element={<DmLayout />} />
-          <Route path="/server" element={<Server />} />
-          <Route path="/server/:id" element={<Server />} />
+          {/* <Route path="/server" element={<Server />} /> */}
+          <Route path="/server/:server" element={<Server />} />
+          <Route path="/server/:server/:channel" element={<Server />} />
           <Route
             path="*"
             element={

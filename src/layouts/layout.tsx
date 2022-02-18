@@ -5,10 +5,10 @@ import serverData from "../data/server.json";
 const Layout = () => {
   return (
     <>
-      <div className="w-full flex h-screen bg-[#fff]">
-        <main className="max-w-screen-2xl h-screen w-full flex mx-auto">
+      <div className="w-full flex h-screen items-center justify-center bg-[#fff]">
+        <main className="max-w-screen-2xl w-full h-full max-h-[778px] flex">
           <aside className="min-w-min h-full py-4 bg-dc-black-700 text-white flex flex-col items-center">
-            <nav className="w-full flex flex-col items-center">
+            <nav className="w-full flex h-full flex-col items-center">
               <ul className="flex flex-col gap-y-4">
                 <li>
                   <ServerAvatar name="Home" to="/dm" />
