@@ -48,8 +48,8 @@
           "description": "<p>Hasil dari kelas React native di <a class=\"underline\" target=\"_blank\" rel=\"noreferrer\" href=\"https://sanbercode.com/\">SanberCode</a>, Aplikasi berbagi foto sederhana yang terinspirasi dari Instagram. Menggunakan Firebase sebagai Backend dengan beberapa fitur aplikasi diantaranya autentikasi(menggunakan akun google dan manual), kamera, upload foto, dan chat.</p>",
           "story": "Aplikasi mobile ke 2 yang saya kerjakan dari awal hingga akhir seorang diri.",
           "technology": ["React native", "JS", "Firebase"],
-          "repository_url": "https://github.com/yuandahanif/instagram-clone-reactjs",
-          "demo_url": "https://yuandahanif.github.io/instagram-clone-reactjs/"
+          "repository_url": "https://github.com/yuandahanif/shoot-and-share",
+          "demo_url": "https://github.com/yuandahanif/shoot-and-share/releases"
         },
         {
           "name": "portfolio[old]",
