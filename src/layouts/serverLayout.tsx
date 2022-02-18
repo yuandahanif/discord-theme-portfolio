@@ -115,8 +115,12 @@ const ServerLayout = () => {
                           <span className="font-semibold">{_.name}</span>
                         </div>
 
-                        <div className="max-w-full w-max mb-2 rounded-sm overflow-hidden">
-                          <img src={_.image_url} alt={_.name} />
+                        <div className="max-w-full w-5/6 mb-2 rounded-sm overflow-hidden">
+                          <img
+                            className="w-full"
+                            src={_.image_url}
+                            alt={_.name}
+                          />
                         </div>
 
                         <div className="mb-2">
