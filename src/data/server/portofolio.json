@@ -63,15 +63,19 @@
         {
           "name": "portfolio",
           "image_url": "https://github.com/yuandahanif/discord-theme-portfolio/blob/main/src/assets/images/discord-ss.png?raw=true",
-          "description": "<p>Web untuk untuk showcase project yang pernah saya buat.</p>",
-          "story": "Web ini dibuat dalam waktu dua hari :D",
-          "technology": ["React", "TS", "SASS"],
+          "description": "<p>Web untuk untuk showcase personal project yang pernah saya buat.</p>",
+          "story": "Web ini bertemakan Discord karena kebetulan Discord adalah aplikasi yang saat ini sedang sering saya gunakan.",
+          "technology": ["React", "TS", "Tailwind"],
           "repository_url": "https://github.com/yuandahanif/discord-theme-portfolio",
           "demo_url": "https://yuandahanif.github.io/discord-theme-portfolio/#/dm"
         }
       ]
     },
-    { "id": "empty-1", "name": "about", "messages": [] },
+    {
+      "id": "about-1",
+      "name": "about",
+      "messages": []
+    },
     { "id": "404-1", "name": "404", "messages": [] }
   ]
 }
