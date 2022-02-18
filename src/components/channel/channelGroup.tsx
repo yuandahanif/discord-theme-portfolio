@@ -3,7 +3,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 interface ChannelList {
   name: string;
-  to: string;
+  id: string;
 }
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 interface ChannelListProps {
   name: string;
   to: string;
-  onActive?: ({ name, to }: ChannelList) => void;
+  onActive?: ({ name, id }: ChannelList) => void;
 }
 
 const ChannelList = ({ name, to, onActive }: ChannelListProps) => {
@@ -23,12 +23,18 @@ const ChannelList = ({ name, to, onActive }: ChannelListProps) => {
 
   useEffect(() => {
     if (match && onActive) {
-      onActive({ name, to });
+      onActive({ name, id: to });
     }
-  }, [match]);
+  }, []);
+
+  const onClick = () => {
+    if (onActive) {
+      onActive({ name, id: to });
+    }
+  };
 
   return (
-    <Link to={to}>
+    <Link to={to} onClick={onClick}>
       <div
         className={`pl-3 mb-1 flex gap-x-1 py-1 items-center text-white rounded-md ${
           match ? "bg-[#393C42]" : " hover:bg-dc-black-100"
@@ -58,7 +64,7 @@ const ChannelGroup = ({ name, channels }: Props) => {
   const [isListVisible, setIsListVisible] = useState(true);
   const [activeChannel, setActiveChannel] = useState<{
     name: string;
-    to: string;
+    id: string;
   } | null>(null);
 
   const toggleListVisible = () => {
@@ -97,7 +103,7 @@ const ChannelGroup = ({ name, channels }: Props) => {
               ? channels.map((_) => (
                   <li key={_.name}>
                     <ChannelList
-                      to={_.to}
+                      to={"/server/" + _.id}
                       name={_.name}
                       onActive={(data) => {
                         setActiveChannel(data);
@@ -107,7 +113,7 @@ const ChannelGroup = ({ name, channels }: Props) => {
                 ))
               : activeChannel && (
                   <ChannelList
-                    to={activeChannel.to}
+                    to={"/server/" + activeChannel.id}
                     name={activeChannel.name}
                   />
                 )}
