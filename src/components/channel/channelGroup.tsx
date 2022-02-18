@@ -9,6 +9,7 @@ interface Channel {
 interface Props {
   name: string;
   channels: Channel[];
+  server: string;
 }
 
 interface ChannelListProps {
@@ -60,7 +61,7 @@ const ChannelList = ({ name, to, onActive }: ChannelListProps) => {
   );
 };
 
-const ChannelGroup = ({ name, channels }: Props) => {
+const ChannelGroup = ({ name, channels, server }: Props) => {
   const [isListVisible, setIsListVisible] = useState(true);
   const [activeChannel, setActiveChannel] = useState<{
     name: string;
@@ -103,7 +104,7 @@ const ChannelGroup = ({ name, channels }: Props) => {
               ? channels.map((_) => (
                   <li key={_.name}>
                     <ChannelList
-                      to={"/server/" + _.id}
+                      to={`/server/${server}/${_.id}`}
                       name={_.name}
                       onActive={(data) => {
                         setActiveChannel(data);
@@ -113,7 +114,7 @@ const ChannelGroup = ({ name, channels }: Props) => {
                 ))
               : activeChannel && (
                   <ChannelList
-                    to={"/server/" + activeChannel.id}
+                    to={`/server/${server}/${activeChannel.id}`}
                     name={activeChannel.name}
                   />
                 )}

@@ -31,14 +31,17 @@ const ServerLayout = () => {
         </header>
 
         <div className="px-1 pt-3 text-dc-text-base">
-          <ul>
-            <li>
-              <ChannelGroup
-                name="TEXT CHANNELS"
-                channels={articleJson.channel}
-              />
-            </li>
-          </ul>
+          {params.server && (
+            <ul>
+              <li>
+                <ChannelGroup
+                  server={params.server}
+                  name="TEXT CHANNELS"
+                  channels={articleJson.channel}
+                />
+              </li>
+            </ul>
+          )}
         </div>
 
         <ProfileBar
@@ -50,27 +53,27 @@ const ServerLayout = () => {
 
       <div className="grow h-full bg-dc-black-100 overflow-y-hidden">
         <header className="flex gap-x-1 items-center px-4 py-2 text-lg border-b border-dc-black-700 text-white">
-          {params.server && (
-            <>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-7 w-7 text-dc-text-base"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
-                />
-              </svg>
+          <>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-7 w-7 text-dc-text-base"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+              />
+            </svg>
+            {params.channel && (
               <span className="text-white text-base">
-                {articleJson.channel.find((c) => c.id === params.server)?.name}
+                {articleJson.channel.find((c) => c.id === params.channel)?.name}
               </span>
-            </>
-          )}
+            )}
+          </>
 
           <div className="ml-auto flex items-center">
             <span className="text-xs hover:text-gray-400 cursor-default duration-300">
@@ -80,9 +83,9 @@ const ServerLayout = () => {
         </header>
 
         <div className="flex flex-col h-[85%] pr-1 mr-1 gap-y-4 my-1 text-white overflow-y-auto scroll-thin">
-          {params.server &&
+          {params.channel &&
             articleJson.channel
-              .find((c) => c.id === params.server)
+              .find((c) => c.id === params.channel)
               ?.messages.map((_, i) => {
                 return (
                   <div

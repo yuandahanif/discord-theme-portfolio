@@ -9,7 +9,7 @@ interface Props {
 
 const ServerAvatar = ({ image, to, name }: Props) => {
   let resolved = useResolvedPath(to);
-  let match = useMatch({ path: resolved.pathname, end: true });
+  let match = useMatch({ path: resolved.pathname, end: false });
   return (
     <>
       <Link to={to}>
