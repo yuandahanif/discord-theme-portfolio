@@ -7,6 +7,15 @@
       "name": "portfolio",
       "messages": [
         {
+          "name": "Informatics-expo",
+          "image_url": "https://github.com/yuandahanif/discord-theme-portfolio/blob/main/src/assets/images/expo.png?raw=true",
+          "description": "Tempat memamerkan dan mengarsip project mahasiswa informatika UII tiap akhir semester.",
+          "story": "Salah satu project yang saya kerjakan di Studen Staff Informatik Universitas Islam Indonesia.",
+          "technology": ["HTML", "CSS", "JS", "ReactJs", "Laravel", "SCSS"],
+          "repository_url": "#",
+          "demo_url": "https://informatics-expo.id/"
+        },
+        {
           "name": "Res.to",
           "image_url": "https://yuandahanif.github.io/portfolio/static/media/project-1.1a7023d3.png",
           "description": "Res.to adalah Mobile Progresive Web App yang berisi ratusan daftar restoran untuk memenuhi petualangan makanmu setiap hari.    ",
